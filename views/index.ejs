@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="" UTF-8 />
+    <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie-edge" />
+    <title>Chat App</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      #message-container {
+        width: 80%;
+        max-width: 1200px;
+      }
+
+      #message-container div {
+        background-color: #ccc;
+        padding: 5px;
+      }
+
+      #message-container div:nth-child(2n) {
+        background-color: #fff;
+      }
+    </style>
+    <script defer src="http://localhost:6969/socket.io/socket.io.js"></script>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div id="room-container">
+      <% Object.keys(rooms).forEach(room => { %>
+      <div>
+        <%=room%>
+        <a href="/<%= room %>">Join</a>
+      </div>
+      <% }) %>
+    </div>
+    <form action="/room" method="POST">
+      <input name="room" type="text" required />
+      <button type="submit">New Room</button>
+    </form>
+  </body>
+</html>
