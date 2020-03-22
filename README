@@ -1,0 +1,9 @@
+This is a chat application in which the server allows users to create multiple rooms. 
+
+Users can send eachother messages but messages are only broadcasted to users in the same room. 
+
+All rooms have their own message channels and user lists.
+
+Application keeps track of all the rooms a single user is in and if a user closes the application.
+
+To start the project use npm run devStart in the temrinal and go on http://localhost:6969/.
